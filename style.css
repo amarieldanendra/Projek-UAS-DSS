@@ -1,0 +1,23 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  color: black;
+}
+
+#judul {
+  /* padding-top: 30px; */
+  padding: 50px;
+  text-align: center;
+}
+
+#kriteria {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#desa {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+}
