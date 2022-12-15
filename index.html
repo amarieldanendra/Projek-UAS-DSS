@@ -1,107 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Topsis</title>
-  </head>
-  <body>
-    <section id="judul">
-      <h1 style="text-align: center">Topsis</h1>
-      <h4>Kasus : Jumlah Pekerja di Masing-masing Bidang Pekerjaan di Kecamatan Wado Kabupaten Sumedang</h4>
-      <p>
-        Menentukan bidang pekerjaan apa yang masih membutuhkan pekerja di Kecamatan Wado Kabupaten Sumedang dengan metode Decision Support System yaitu TOPSIS agar dapat mengetahui alternatif terbaik dengan mengurutkan alternatif terpilih
-        berdasarkan jarak terdekat dari solusi ideal positif dan terjauh dari solusi ideal negatif dari sudut pandang geometris dengan menggunakan jarak Euclidean
-      </p>
-    </section>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+         crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+         crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+      <script src="script.js"></script>
+      <link rel="stylesheet" href="style.css" />
+      <title>Topsis</title>
+   </head>
+   <body>
+      <main>
 
-    <section id="kriteria">
-      <div>
-        <h4>Kriteria</h4>
-        <ol class="list-group list-group-numbered">
-          <li class="list-group-item">Jumlah total pekerja terdaftar di masing-masing desa Kecamatan Wado</li>
-          <li class="list-group-item">Jumlah pekerja per bidang di masing-masing desa Kecamatan Wado</li>
-        </ol>
-      </div>
-    </section>
+         <section id="identitas" class="mt-4">
+            <section id="judul">
+                <h1 style="text-align: center">Topsis</h1>
+                <h4>Kasus : Jumlah Pembukaan Apotek di Bidang Pekerjaan Kesehatan di Kabupaten Sumedang</h4>
+                <p>
+                  Menentukan pembukaan Apotek di bidang pekerjaan kesehatan Kabupaten Sumedang dengan metode Decision Support System yaitu TOPSIS agar dapat mengetahui alternatif terbaik dengan mengurutkan alternatif terpilih
+                  berdasarkan jarak terdekat dari solusi ideal positif dan terjauh dari solusi ideal negatif dari sudut pandang geometris dengan menggunakan jarak Euclidean
+                </p>
+              </section>
+          
+              <section id="kriteria">
+                <!-- <div>
+                  <h4>Kriteria</h4>
+                  <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">Jumlah apotek</li>
+                    <li class="list-group-item">Jumlah penduduk</li>
+                    <li class="list-group-item">Jumlah usaha jasa kesehatan</li>
+                  </ol>
+                </div> -->
+              </section>
 
-    <section id="desa">
-      <h4>Desa di Kecamatan Wado</h4>
-      <ol class="list-group list-group-numbered">
-        <li class="list-group-item">Desa Cimungkal</li>
-        <li class="list-group-item">Desa Ganjaresik</li>
-        <li class="list-group-item">Desa Cirengkrang</li>
-        <li class="list-group-item">Desa Cikareo</li>
-        <li class="list-group-item">Desa Cikareo Utara</li>
-        <li class="list-group-item">Desa Wado</li>
-        <li class="list-group-item">Desa Mulyajaya</li>
-        <li class="list-group-item">Desa Sukajadi</li>
-        <li class="list-group-item">Desa Cisurat</li>
-        <li class="list-group-item">Desa Sukapura</li>
-      </ol>
-      <!-- <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card">
-            <p>Desa Cimungkal</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card">
-            <p>Desa Ganjaresik</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card">
-            <p>Desa Cirengkrang</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card">
-            <p>Desa Cikareo</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card">
-            <p>Desa Cikareo Utara</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card">
-            <p>Desa Wado</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card">
-            <p>Desa Mulyajaya</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card">
-              <p>Desa Sukajadi</p>
+            <div class="container">
+               <h2 style="text-align: center;">Anggota Kelompok</h2>
+               <ol class="list-group list-group-numbered">
+                  <li class="list-group-item">Amariel Danendra Dagna - 140810200058</li>
+                  <li class="list-group-item">Alya Raisa Hidayat - 140810200060</li>
+                  <li class="list-group-item">Muthia Azzahra - 140810200066</li>
+               </ol>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card">
-              <p>Desa Cisurat</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card">
-              <p>Desa Sukapura</p>
-            </div>
-          </div>
-      </div> -->
-    </section>
 
-    <section id="hasil">
-      <div>
-        <h4>Hasil</h4>
-      </div>
-    </section>
-  </body>
+         <section id="kandidat" class="mt-4">
+            <div class="container">
+            <h2 style="text-align: center;">Input Kandidat (Alternatif)</h2>
+            <form action="">
+               <table class="tabletable-borderless">
+                  <tbody>
+                    <tr>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="rancakalong" id="rancakalong" name="kecamatan">
+                              <label class="form-check-label" for="rancakalong">
+                              Rancakalong
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="sumedang selatan" id="sumedang-selatan"
+                                 name="kecamatan">
+                              <label class="form-check-label" for="sumedang-selatan">
+                              Sumedang Selatan
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="sumedang utara" id="sumedang-utara" name="kecamatan">
+                              <label class="form-check-label" for="sumedang-utara">
+                              Sumedang Utara
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="ganeas" id="ganeas" name="kecamatan">
+                              <label class="form-check-label" for="ganeas">
+                              Ganeas
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="situraja" id="situraja" name="kecamatan">
+                              <label class="form-check-label" for="situraja">
+                              Situraja
+                              </label>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="jatinangor" id="jatinangor" name="kecamatan">
+                              <label class="form-check-label" for="jatinangor">
+                              Jatinangor
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="cimanggung" id="cimanggung" name="kecamatan">
+                              <label class="form-check-label" for="cimanggung">
+                              Cimanggung
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="tanjungsari" id="tanjungsari" name="kecamatan">
+                              <label class="form-check-label" for="tanjungsari">
+                              Tanjungsari
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="sukasari" id="sukasari" name="kecamatan">
+                              <label class="form-check-label" for="sukasari">
+                              Sukasari
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="pamulihan" id="pamulihan" name="kecamatan">
+                              <label class="form-check-label" for="pamulihan">
+                              Pamulihan
+                              </label>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="cisitu" id="cisitu" name="kecamatan">
+                              <label class="form-check-label" for="cisitu">
+                              Cisitu
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="darmaraja" id="darmaraja" name="kecamatan">
+                              <label class="form-check-label" for="darmaraja">
+                              Darmaraja
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="cibugel" id="cibugel" name="kecamatan">
+                              <label class="form-check-label" for="cibugel">
+                              Cibugel
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="wado" id="wado" name="kecamatan">
+                              <label class="form-check-label" for="wado">
+                              Wado
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="jatinunggal" id="jatinunggal" name="kecamatan">
+                              <label class="form-check-label" for="jatinunggal">
+                              Jatinunggal
+                              </label>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="jatigede" id="jatigede" name="kecamatan">
+                              <label class="form-check-label" for="jatigede">
+                              Jatigede
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="tomo" id="tomo" name="kecamatan">
+                              <label class="form-check-label" for="tomo">
+                              Tomo
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="ujungjaya" id="ujungjaya" name="kecamatan">
+                              <label class="form-check-label" for="ujungjaya">
+                              Ujungjaya
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="conggeang" id="conggeang" name="kecamatan">
+                              <label class="form-check-label" for="conggeang">
+                              Conggeang
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="paseh" id="paseh" name="kecamatan">
+                              <label class="form-check-label" for="paseh">
+                              Paseh
+                              </label>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="cimalaka" id="cimalaka" name="kecamatan">
+                              <label class="form-check-label" for="cimalaka">
+                              Cimalaka
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="cisarua" id="cisarua" name="kecamatan">
+                              <label class="form-check-label" for="cisarua">
+                              Cisarua
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="tanjungkerta" id="tanjungkerta" name="kecamatan">
+                              <label class="form-check-label" for="tanjungkerta">
+                              Tanjungkerta
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="tanjungmedar" id="tanjungmedar" name="kecamatan">
+                              <label class="form-check-label" for="tanjungmedar">
+                              Tanjungmedar
+                              </label>
+                           </div>
+                        </td>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="buahdua" id="buahdua" name="kecamatan">
+                              <label class="form-check-label" for="buahdua">
+                              Buahdua
+                              </label>
+                           </div>
+                        </td>
+                     <tr>
+                        <td>
+                           <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" value="surian" id="surian" name="kecamatan">
+                              <label class="form-check-label" for="surian">
+                              Surian
+                              </label>
+                           </div>
+                        </td>
+                     </tr>
+                     </tr>
+                  </tbody>
+               </table>
+            </form>
+         </section>
+         <section id="kriteria" class="mt-4">
+            <div class="container">
+               <h2 style="text-align: center;">Kriteria</h2>
+               <ol class="list-group list-group-numbered">
+                  <li class="list-group-item">Jumlah apotek</li>
+                  <li class="list-group-item">Jumlah penduduk</li>
+                  <li class="list-group-item">Jumlah jasa bidang kesehatan</li>
+               </ol>
+               <button type="button" class="btn btn-primary mt-3 d-block mx-auto" onclick="topsis()">Hitung</button>
+            </div>
+         </section>
+         <section id="hasil" class="my-4">
+            <div class="container">
+               <h2 style="text-align: center;">Hasil</h2>
+               <ul class="list-group">
+               </ul>
+            </div>
+         </section>
+      </main>
+   </body>
 </html>
